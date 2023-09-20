@@ -1,0 +1,219 @@
+:root {
+    --header-height: 100px;
+}
+* {
+    margin: 0px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* App name */
+.app-name {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* THEMES */
+#darkmode {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+#lightmode {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+/* Dark Mode Switch */
+.switch-div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+/* hides default html checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.dark-mode-status {
+    padding: 0;
+    margin: 0;
+}
+
+.card, .nav-link, .active, .list-group-item, .nav, .nav-tabs {
+    border-color: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+.active {
+    background-color: black;
+}
+
+
+.myApp-header {
+    height: var(--header-height);
+}
+.myApp-header h1 {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.myApp-logo {
+    width: 100px;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    padding: 0;
+}
+
+#user-container {
+    max-width: 600px;
+    background-color: inherit;
+    margin: 100px auto 100px auto;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+    #form-wrapper {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0rem;
+        border: 1px solid ;
+        border-radius: 5px;
+        padding: 40px;
+    }
+        .flex-wrapper {
+            display: flex;
+        }
+    #list-wrapper {
+        border: 1px solid ;
+        border-radius: 5px;
+        padding: 20px;
+        cursor: pointer;
+
+    }
+        .thing-wrapper {
+            border-radius: 5px;
+            align-items: center;
+            padding: 5px 0 5px 0;
+        }
+        .thing-wrapper:hover {
+            background-color: #043842;
+            color: white;
+        }
+            .id-list {
+                margin-left: 10px;
+            }
+
+
+.song-upload-form-div {
+    margin: 20px;
+}
+
+
+.songs-list {
+    border: solid 1px white;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+    .songs-list-header {
+        font-size: 30px;
+        margin: 5px 0 5px 10px;
+    }
+.song-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 5px 20px 5px;
+    border-radius: 5px;
+    align-items: center;
+}
+.song-wrapper p {
+    margin: 0;
+}
+.song-wrapper p:first-child {
+    margin-left: 10px;
+}
+.song-wrapper:hover {
+    background-color: #043842;
+    color: white;
+}
+.play-pause-songs-list {
+    margin: 5px 10px 5px 0;
+    width: 20px;
+}
+
+.AudioPlayer-div-wrapper {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: inherit;
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.audio-player-btn {
+    margin: 5px 50px;
+}
