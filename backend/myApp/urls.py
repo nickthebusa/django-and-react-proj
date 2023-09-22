@@ -22,4 +22,5 @@ urlpatterns = [
     path('song-create', views.songCreate, name="song-create"),
     path('song-list/', views.songList, name="song-list"),
     path('', include(router.urls))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

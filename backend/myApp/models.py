@@ -19,10 +19,13 @@ class Thing(models.Model):
     
 class Song(models.Model):
     song_title = models.CharField(max_length=50, null=True)
-    song_artist = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    sound_file = models.FileField(null=False, default='', upload_to="", validators=[FileExtensionValidator(allowed_extensions=['wav','mp3', 'flac', 'aiff', 'alac', 'ogg'])])
-    song_art = models.ImageField(null=False, upload_to="", default='')
+    song_artist = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    sound_file = models.FileField(validators=[FileExtensionValidator(allowed_extensions=['wav','mp3', 'flac', 'aiff', 'alac', 'ogg'])])
+    song_art = models.ImageField(blank=True)
     date_uploaded = models.DateTimeField(default=timezone.now)
+    
+    class Meta:
+        verbose_name_plural = "Songs"
     
     def __str__(self):
         return self.song_title

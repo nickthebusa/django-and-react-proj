@@ -3,6 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import axios from "axios";
 
+import app_music from './app_music/OXI-CLEEN-2.mp3'
+
 // my modules
 // import Modal from "./components/Modal"
 import ThemeSwitch from "./components/ThemeSwitch.jsx";
@@ -211,6 +213,12 @@ class App extends Component {
     this.state = {
 
     }
+    this.play = this.play.bind(this);
+  }
+
+  play() {
+    let audio = new Audio(app_music);
+    audio.play();
   }
 
   render() {
@@ -218,19 +226,24 @@ class App extends Component {
       <React.StrictMode>
       <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-      
-      <header className="myApp-header">
-        <h1>MyApp</h1>
-        <ThemeSwitch></ThemeSwitch>
-      </header>
+      <div className="page">
+        <header className="myApp-header">
+          <h1>MyApp</h1>
+          <ThemeSwitch></ThemeSwitch>
+        </header>
 
-      <ThingsList></ThingsList>
+        <button
+        onClick={this.play}></button>
+        
+        <ThingsList></ThingsList>
 
-      <SongUpload></SongUpload>
+        <SongUpload></SongUpload>
 
-      <SongList ></SongList>
+        <SongList ></SongList>
 
-      <AudioPlayer ></AudioPlayer>
+        <AudioPlayer ></AudioPlayer>
+
+      </div>
 
       </QueryClientProvider>
       </BrowserRouter>

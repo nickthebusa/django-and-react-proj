@@ -1,5 +1,6 @@
 :root {
     --header-height: 100px;
+    --audio-player-height: 65px;
 }
 * {
     margin: 0px;
@@ -8,6 +9,13 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+/* whole page exluding the audio player */
+.page {
+    margin-bottom: var(--audio-player-height);
 }
 
 /* App name */
@@ -206,10 +214,11 @@ input:checked + .slider:before {
     border: 1px solid;
     border-radius: 5px;
     border-color: inherit;
-    height: 55px;
+    height: var(--audio-player-height);
     width: 100%;
     position: fixed;
     bottom: 0;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
